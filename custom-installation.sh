@@ -140,8 +140,8 @@ sudo echo -e "\t<role rolename=\"manager-gui\"/>
     sudo su
     sudo chmod -R 777 webapps
     sudo chmod -R 777 work
-    sudo rm -rf /opt/tomcat/webapps/*
-    sudo rm -rf /opt/tomcat/work/*
+    # sudo rm -rf /opt/tomcat/webapps/*
+    # sudo rm -rf /opt/tomcat/work/*
     sudo ls /opt/tomcat/webapps
 
     sudo systemctl start tomcat.service
