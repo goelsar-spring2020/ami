@@ -22,3 +22,5 @@ or
 ```
 packer build -var-file=./vars.json ubuntu-ami.json
 ```
+
+--test
