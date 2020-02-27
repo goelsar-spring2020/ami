@@ -22,7 +22,7 @@ source /etc/profile
 sudo apt-get install ca-certificates-java
 
 #install maven
-sudo apt-get install maven -y
+#sudo apt-get install maven -y
 
 #TOMCAT SETUP
 #create user tomcat for secutity purposes
