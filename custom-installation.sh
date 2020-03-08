@@ -28,7 +28,7 @@ sudo apt-get install wget -y
 cd /home/ubuntu
 
 echo 'Downloading codedeploy'
-wget https://aws-codedeploy-{{user `aws_region`}}.s3.{{user `aws_region`}}.amazonaws.com/latest/install
+wget https://aws-codedeploy-${AWSREGION}.s3.${AWSREGION}.amazonaws.com/latest/install
 echo 'Codedeploy downloaded successfully'
 chmod +x ./install
 sudo ./install auto
