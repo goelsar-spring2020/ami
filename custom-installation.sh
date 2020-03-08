@@ -21,6 +21,19 @@ source /etc/profile
 #installing all the required java certificates
 sudo apt-get install ca-certificates-java
 
+
+sudo apt-get install ruby -y
+
+sudo apt-get install wget -y
+cd /home/ubuntu
+
+echo 'Downloading codedeploy'
+wget https://aws-codedeploy-{{user `aws_region`}}.s3.{{user `aws_region`}}.amazonaws.com/latest/install
+echo 'Codedeploy downloaded successfully'
+chmod +x ./install
+sudo ./install auto
+
+
 #install maven
 #sudo apt-get install maven -y
 
