@@ -34,6 +34,8 @@
     "provisioners":[
         {
             "type": "shell",
+            "environment_vars": [
+            "AWSREGION={{user `aws_region`}}"],
             "script": "custom-installation.sh"
         }
     ]
