@@ -3,7 +3,7 @@
 sudo apt-get update
 
 #JAVA SETUP
-sudo apt install openjdk-11-jdk-headless -y
+sudo apt install default-jre -y
 
 #Export java home
 echo "export JAVA_HOME=$(dirname $(dirname $(readlink $(readlink $(which javac)))))" | sudo tee -a /etc/profile
