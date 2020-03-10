@@ -3,7 +3,7 @@ jobs:
   build:
     branches:
       only:
-        - assignment07
+        - master
     working_directory: ~/project
     docker:
       - image: circleci/python:2.7-jessie
