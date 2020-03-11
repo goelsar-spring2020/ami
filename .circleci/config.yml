@@ -1,9 +1,6 @@
 version: 2
 jobs:
   build:
-    branches:
-      only:
-        - master
     working_directory: ~/project
     docker:
       - image: circleci/python:2.7-jessie
@@ -33,3 +30,13 @@ jobs:
             -var "aws_secret_key=${AWS_SECRET_KEY}" \
             -var "ami_users=${AMI_USERS}" \
             ubuntu-ami.json
+
+workflows:
+  version: 2
+  build-workflow:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
