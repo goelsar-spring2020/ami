@@ -116,11 +116,11 @@ sudo apt-get update
 sudo apt-get install alien -y
 
 echo 'Downloading cloud watch'
-wget https://s3.amazonaws.com/amazoncloudwatch-agent/centos/amd64/latest/amazon-cloudwatch-agent.rpm
+wget https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
 
 echo 'cloud watch downloaded successfully'
-chmod +x ./amazon-cloudwatch-agent.rpm
-sudo alien -i ./amazon-cloudwatch-agent.rpm
+chmod +x ./amazon-cloudwatch-agent.deb
+sudo alien -i ./amazon-cloudwatch-agent.deb
 
 echo 'Listing all services'
 systemctl list-unit-files --type=service
