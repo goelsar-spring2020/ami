@@ -34,9 +34,6 @@ chmod +x ./install
 sudo ./install auto
 
 
-#install maven
-#sudo apt-get install maven -y
-
 #TOMCAT SETUP
 #create user tomcat for secutity purposes
 sudo groupadd tomcat
@@ -109,3 +106,27 @@ sudo chmod -R 777 work
 sudo ls /opt/tomcat/webapps
 
 sudo systemctl start tomcat.service
+
+
+cd ~
+
+#Installing Cloud watch agent
+sudo add-apt-repository universe
+sudo apt-get update
+sudo apt-get install alien -y
+
+echo 'Downloading cloud watch'
+wget https://s3.amazonaws.com/amazoncloudwatch-agent/centos/amd64/latest/amazon-cloudwatch-agent.rpm
+
+echo 'cloud watch downloaded successfully'
+chmod +x ./amazon-cloudwatch-agent.rpm
+sudo alien -i ./amazon-cloudwatch-agent.rpm
+
+echo 'Listing all services'
+systemctl list-unit-files --type=service
+
+echo 'Enabling cloudwatch service'
+sudo systemctl enable amazon-cloudwatch-agent.service
+
+echo 'Starting cloudwatch service'
+sudo systemctl start amazon-cloudwatch-agent.service
